@@ -11,8 +11,8 @@ public class Main {
         for (int i = 0; i < num; i++){
             arr[i] = sc.nextInt();
         }
-        int min = findMin(arr, num);
-        System.out.println("The minimum of the array elements is: " + min);
+        double sum = findAverage(arr, num);
+        System.out.println(sum / num);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -23,6 +23,15 @@ public class Main {
             return Math.min(min, arr[n-1]);
         }
 
+    }
+
+    public static double findAverage(int[] arr, int n) {
+        if (n == 1) {
+            return arr[0];
+        } else {
+            double sum = findAverage(arr, n-1);
+            return sum + arr[n-1];
+        }
     }
 
 }
