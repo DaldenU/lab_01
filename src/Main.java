@@ -6,7 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number: ");
         int num = sc.nextInt();
-        System.out.println("The " + num + " number in Fibonacci sequence is: " + Fibonacci(num));
+        System.out.print("Enter the degree: ");
+        int n = sc.nextInt();
+        System.out.println("The " + n + " degree of " + num + " is: " + powerOf(num, n));
     }
 
     public static int findMin(int[] arr, int n) {
@@ -45,6 +47,16 @@ public class Main {
         else {
             return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
+    }
+
+    public static int powerOf(int a, int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            n -= 1;
+            return a * powerOf(a, n);
+        }
+
     }
 
 }
