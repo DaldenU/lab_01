@@ -4,13 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number: ");
+        System.out.print("Enter the number of elements in array: ");
         int num = sc.nextInt();
-        if(!findPrime(num, (int) Math.sqrt(num))) {
-            System.out.println("Composite");
-        } else{
-            System.out.println("Prime");
+        int[] arr = new int[num];
+        System.out.print("Enter the numbers: ");
+        for (int i = 0; i < num; i++){
+            arr[i] = sc.nextInt();
         }
+        double sum = findAverage(arr, num);
+        System.out.println(sum / num);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -30,18 +32,6 @@ public class Main {
             double sum = findAverage(arr, n-1);
             return sum + arr[n-1];
         }
-    }
-
-    public static boolean findPrime(int num, int i) {
-        if (i <= 1) {
-            return true;
-        }
-        if(num % i == 0) {
-            return false;
-        } else {
-            return findPrime(num, i - 1);
-        }
-
     }
 
 }
