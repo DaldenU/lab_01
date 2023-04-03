@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number: ");
         int num = sc.nextInt();
-        System.out.println("The factorial of the given number is: " + factorial(num));
+        System.out.println("The " + num + " number in Fibonacci sequence is: " + Fibonacci(num));
     }
 
     public static int findMin(int[] arr, int n) {
@@ -33,6 +33,17 @@ public class Main {
             return 1;
         } else {
             return n * factorial(n-1);
+        }
+    }
+
+    public static int Fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        }
+        else {
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
     }
 
