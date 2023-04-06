@@ -4,11 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number: ");
-        int num = sc.nextInt();
-        System.out.print("Enter the degree: ");
         int n = sc.nextInt();
-        System.out.println("The " + n + " degree of " + num + " is: " + powerOf(num, n));
+        int k = sc.nextInt();
+        System.out.println(findBinomialCoefficient(n, k));
     }
 
     public static int findMin(int[] arr, int n) {
@@ -59,4 +57,12 @@ public class Main {
 
     }
 
+    public static int findBinomialCoefficient(int n, int k) {
+        if(k == 0 || k == n) {
+            return 1;
+        } else {
+            return findBinomialCoefficient(n-1, k-1) + findBinomialCoefficient(n-1, k);
+        }
+
+    }
 }
