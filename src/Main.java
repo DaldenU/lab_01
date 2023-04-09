@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-        System.out.println(findBinomialCoefficient(n, k));
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(getGCD(a, b));
     }
 
     public static int findMin(int[] arr, int n) {
@@ -64,5 +64,16 @@ public class Main {
             return findBinomialCoefficient(n-1, k-1) + findBinomialCoefficient(n-1, k);
         }
 
+    }
+
+    public static int getGCD(int a, int b) {
+        if(a == 0) {
+            return b;
+        }
+        if(b == 0) {
+            return a;
+        } else {
+            return getGCD(b, (a % b));
+        }
     }
 }
