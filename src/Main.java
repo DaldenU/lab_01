@@ -4,9 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        System.out.println(getGCD(a, b));
+        String s = sc.nextLine();
+        int n = s.length() - 1;
+        if(getAllDigit(s, n)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
     }
 
     public static int findMin(int[] arr, int n) {
@@ -74,6 +78,17 @@ public class Main {
             return a;
         } else {
             return getGCD(b, (a % b));
+        }
+    }
+
+    public static boolean getAllDigit(String s, int n) {
+        if(n == 0) {
+            return Character.isDigit(s.charAt(0));
+        }
+        if(Character.isDigit(s.charAt(n))) {
+            return getAllDigit(s, n-1);
+        } else {
+            return false;
         }
     }
 }
